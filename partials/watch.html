@@ -1,0 +1,12 @@
+<div id="pageInfo">
+    <ul >
+	    <li id="listOne" ng-repeat="data in viewSerie" >
+			<img ng-src="{{data.show.banner}}">
+			<h2>{{data.show.title}}</h2>
+			<p>{{nbSeasons}} Saisons  - {{nbEpisodes}} Episodes - {{data.show.status}}</p>
+			<span>chaine : {{data.show.network}}</span>
+			<p>{{data.show.description}}</p>
+			<a>retour</a>
+		</li>
+    </ul>
+</div>

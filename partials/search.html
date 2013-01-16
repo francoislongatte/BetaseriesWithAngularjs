@@ -1,0 +1,35 @@
+<div slide id="container" >
+		<form ng-submit="doSearch()">
+	<input placeholder="Search" autocomplete="off" ng-model="betaSearch" autocorrect="off">
+	</form>
+	<span class="error">{{error}}</span>
+	<span class="error">{{betaseriesResult.root.shows | verifContent}}</span>
+    <ul>
+    	
+	    <li ng-repeat="series in betaseriesResult.root.shows" >
+			<a class="linkChoice" ng-click="windowAjout(series)">{{series.title}}</a>
+			<a ng-click="windowAjout(series)" class="icon-plus"></a>
+			<a ng-click="viewChoice(series)" class="icon-search"></a>
+		</li>
+    </ul>
+​</div>
+<div class="infoEvent">
+       vous allez ajouter la serie <span>{{serie.title}}</span> Confirmez ?
+      <button  ng-click="doChoice(serie)">oui</button>
+      <button  ng-click="windowback()">non</button>
+    </div>
+
+<div id="pageInfo">
+    <ul >
+	    <li id="listOne" ng-repeat="data in viewSerie" >
+			<img ng-src="{{data.show.banner}}">
+			<h2>{{data.show.title}}</h2>
+			<p>{{nbSeasons}} Saisons  - {{nbEpisodes}} Episodes - {{data.show.status}}</p>
+			<span>chaine : {{data.show.network}}</span>
+			<p>{{data.show.description}}</p>
+			<span>{{error}}</span>
+			<button ng-click="windowAjout(data.show)">ajouter</button>
+			<button ng-click="back()">retour</button>
+		</li>
+    </ul>
+</div>

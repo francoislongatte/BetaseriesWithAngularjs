@@ -1,0 +1,12 @@
+<div slide id="container">
+    <p class="status plan">Bientot sur vos ecrans</p>
+    <ul id="list">
+	    <li class="planningList {{result.etat}}" ng-repeat="result in resultPlanning | date " >
+			<span class="{{result.hide}}" id="date">{{result.date | date:'dd/MM/yyyy'}}{{ result.sorti}}</span>
+			<img class="imgPlanning" ng-src="{{result.banner}}" width="auto" height="50px">
+			<h2>{{result.show}}  -  <span>{{result.title}}</span></h2>
+			<span>{{result.season | FirstOrNot}} saison - {{result.episode | FirstOrNot}} épisode - Chaine "{{result.network}}"</span>
+		</li>
+    </ul>
+    
+</div>

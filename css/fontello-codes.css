@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+
+.icon-plus:before { content: '\2b'; } /* '+' */
+.icon-minus:before { content: '\2d'; } /* '-' */
+.icon-home:before { content: '\2302'; } /* '⌂' */
+.icon-ok:before { content: '\2713'; } /* '✓' */
+.icon-cancel:before { content: '\2715'; } /* '✕' */
+.icon-spin6:before { content: '\e839'; } /* '' */
+.icon-monitor:before { content: '💻'; } /* '\1f4bb' */
+.icon-calendar:before { content: '📅'; } /* '\1f4c5' */
+.icon-search:before { content: '🔍'; } /* '\1f50d' */

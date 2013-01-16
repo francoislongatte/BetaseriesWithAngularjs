@@ -1,0 +1,17 @@
+<div slide id="container">
+    <p class="status">Serie en cours...</p><p class="status ajout"><a ng-click="setRoute('search')">Ajouter une serie</a></p>
+     <div class="infoEvent">
+       Souhaitez vous supprimer la serie <span>{{titleDel}}</span>
+      <button  ng-click="deleteSerie(index,titleDel)">supprimer</button>
+      <button  ng-click="back()">Back</button>
+    </div>
+    <ul id="list">
+	    <li ng-repeat="serie in datas" >
+			<a ng-href="#/list/{{serie.root.show.url}}" >
+			<img ng-src="{{serie.root.show.banner | isOrNot }}" width="auto" height="50px"></a>
+			<h2>{{serie.root.show.title}}</h2>
+			<button  ng-click="windowDel($index,serie.root.show.url)"><i class="icon-cancel"></i></button>
+		</li>
+    </ul>
+    
+</div>

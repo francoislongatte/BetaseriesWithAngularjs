@@ -1,0 +1,10 @@
+<div slide id="container">
+    <ul >
+	    <li id="listOne" ng-repeat="data in currentEpisode" >
+		    <img ng-src="{{data.screen}}">
+		    <h2>{{data.title}}</h2>
+		    <p>{{data.episode | FirstOrNot}} épisode </p>
+		    <p>{{data.description}}</p>
+		</li>
+    </ul>
+</div>

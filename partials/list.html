@@ -1,0 +1,27 @@
+<div slide id="container">
+    <ul >
+	    <li id="listOne" ng-repeat="data in currentSerie" >
+			<img ng-src="{{data.show.banner}}">
+			<h2>{{data.show.title}}</h2>
+			<p>{{nbSeasons}} Saisons  - {{nbEpisodes}} Episodes - {{data.show.status}}</p>
+			<span>chaine : {{data.show.network}}</span>
+			<p>{{data.show.description}}</p>
+			<ul id="seasons">
+				<li ng-repeat="seasons in data.show.seasons">
+					<h3>Saison {{seasons.number}}</h3>
+					<ul>
+						<li verifcompleted ng-repeat="episode in seasons.episodes" >
+							<input class="nbEpisode" type="hidden" value="{{episode.episode}}">
+							<input class="nbSaison" type="hidden" value="{{episode.season}}">
+							<input class="nameSerie" type="hidden" value="{{url}}">
+							<h4 ng-click="complete()" ><a ng-href="#/listEpisode/{{url}}/{{seasons.number}}/{{episode.episode}}" >Episode {{episode.episode}}</a></h4>
+							
+							<input type="checkbox" id="{{episode.number}}" ng-true-value="true" ng-false-value="false"  ng-model="episode.bool" ng-click="isCompleted(this,$event,$index,$parent.$index)" />
+							<label class="toggle" for="{{episode.number}}"><i class="icon-ok"></i></label>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+    </ul>
+</div>
